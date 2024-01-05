@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 2 Todo App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <ul class="todo-list">
+            <li 
+                class="todo-item" 
+                v-for="(task, index) in tasks" 
+                :key="index"
+                :class="{completed: task.status === 'completed'}"
+            >
+                <div class="title">{{ task.title }}</div>
+                <button class="btn" @click="handleTaskClick(index)">OK</button>
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
